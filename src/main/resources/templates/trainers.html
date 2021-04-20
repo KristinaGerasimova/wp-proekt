@@ -1,0 +1,85 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Trainers</title>
+    <meta charset="utf-8"/>
+</head>
+<body>
+<br>
+<br>
+<br>
+<div class="py-3" style="display: flex; justify-content: center"><h2>Trainers</h2></div>
+
+
+<th:block xmlns:th="http://www.thymeleaf.org">
+    <div class="container">
+        <div class="row">
+            <div class="col-3 col-offset-3 py-2" style="display: flex; justify-content: space-between;" th:each="trainer : ${trainers}">
+                <div class="card profile" style="width: 18rem;">
+                    <img class="card-img-top" th:src="${trainer.getImg()}" width="200" height="200">
+                    <div class="card-body">
+                        <h5 class="card-title" th:text="${trainer.getName()}"></h5>
+                        <p class="card-text">
+                            <b><i>Address:</i></b><p th:text="${trainer.getAddress()}"></p><br>
+                        </p>
+                        <th:block sec:authorize="hasRole('ROLE_ADMIN')">
+                            <form th:action="@{'/trainers/delete/{id}' (id=${trainer.getId()})}"
+                                  th:method="DELETE">
+                                <button type="submit"
+                                        class="btn btn-sm btn-danger delete-product">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </form>
+                        </th:block>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</th:block>
+<!--<div class="py-2 ml-5" style="display: flex; justify-content: flex-start; flex-direction: column;" >-->
+<!--    <th:block sec:authorize="hasRole('ROLE_ADMIN')">-->
+<!--    <h3>Add new trainer</h3>-->
+<!--    <br>-->
+<!--    <form action="/trainers/add" method="POST">-->
+<!--            <label for='name'>Name:</label>-->
+<!--<br>-->
+<!--        <input style="width: 12%; border: 2px solid lightgray; border-radius: 5px" id='name' type='text' name='name' placeholder="Name"/>-->
+<!--        <br>-->
+<!--<label for='image'>Image:</label>-->
+<!--        <br>-->
+<!--        <input style="width: 12%; border: 2px solid lightgray; border-radius: 5px" id='image' type='text' name='image' placeholder="Link for image"/>-->
+<!--        <br>-->
+<!--<label for='address'>Address:</label>-->
+<!--        <br>-->
+<!--        <input style="width: 12%; border: 2px solid lightgray; border-radius: 5px" id='address' type='text' name='address' placeholder="Address"/>-->
+<!--        <br>-->
+<!--        <br>-->
+<!--        <input class="bg-warning" style="width: 12%; border: 2px solid lightgray; border-radius: 5px" type='submit' value='Submit'/>-->
+<!--    </form>-->
+<!--        <th:block>-->
+<!--</div>-->
+<!--<h2>Trainers</h2>-->
+<!--<ul>-->
+<!--    <li th:each="trainer: ${trainers}"><th:block th:text="${trainer.name}"/> (<th:block th:text="${trainer.address}" />)</li>-->
+<!--</ul>-->
+<div class="py-2 ml-5" style="display: flex; justify-content: flex-start; flex-direction: column;" >
+    <th:block sec:authorize="hasRole('ROLE_ADMIN')">
+<h3>Add new trainer</h3>
+<form action="/trainers/add" method="POST">
+    <label for='name'>Name</label>:<input style="width: 12%; border: 2px solid lightgray; border-radius: 5px" id='name' type='text' name='name'/>
+    <label for='address'>Address</label>:<input style="width: 12%; border: 2px solid lightgray; border-radius: 5px" id='address' type='text' name='address'/>
+<!--    <label for='img'>Address:</label>:<input id='img' type='text' name='address'/>-->
+            <input style="width: 12%; border: 2px solid lightgray; border-radius: 5px" id='image' type='text' name='img' placeholder="Link for image"/>
+
+    <input type='submit' value='Submit'/>
+
+</form>
+          <th:block>
+</div>
+
+</body>
+</html>
+
+

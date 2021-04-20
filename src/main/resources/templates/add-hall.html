@@ -1,0 +1,85 @@
+<th:block xmlns:th="http://www.w3.org/1999/xhtml">
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">Train with us!</h1>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <form action="/halls/add" method="POST">
+                    <input id="id" type="hidden" name="id" th:value="(${hall} != null ? ${hall.getId()} : '')">
+                    <div class="form-group">
+                        <label for="name">Hall name</label>
+                        <input type="text"
+                               class="form-control"
+                               id="name"
+                               name="name"
+                               th:value="(${hall} != null ? ${hall.getName()} : '')"
+                               required
+                               placeholder="Input the hall name">
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Price</label>
+                        <input type="text"
+                               class="form-control"
+                               id="price"
+                               name="price"
+                               th:value="(${hall} != null ? ${hall.getPrice()} : '')"
+                               placeholder="Price">
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">Quantity</label>
+                        <input type="text"
+                               class="form-control"
+                               id="quantity"
+                               name="quantity"
+                               th:value="(${hall} != null ? ${hall.getQuantity()} : '')"
+                               placeholder="Quantity">
+                    </div>
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select name="category" class="form-control">
+                            <option th:if="${hall} != null"
+                                    th:selected="${hall.getCategory() != null &&
+                                hall.getCategory().getId() == hal.getId()}"
+                                    th:each="hal : ${categories}"
+                                    th:value="${hal.getId()}"
+                                    th:text="${hal.getName()}">
+                            </option>
+                            <option th:if="${hall} == null"
+                                    th:each="hal : ${categories}"
+                                    th:value="${hal.getId()}"
+                                    th:text="${hal.getName()}">
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Trainer</label>
+                        <select name="trainer" class="form-control">
+                            <option th:if="${hall} != null"
+                                    th:selected="${hall.getTrainer() != null && hall.getTrainer().getId() == tra.getId()}"
+                                    th:each="tra : ${trainers}"
+                                    th:value="${tra.getId()}"
+                                    th:text="${tra.getName()}">
+                            </option>
+                            <option th:if="${hall} == null"
+                                    th:each="tra : ${trainers}"
+                                    th:value="${tra.getId()}"
+                                    th:text="${tra.getName()}">
+                            </option>
+                        </select>
+                    </div>
+                    <input style="width: 25%; border: 2px solid lightgray; border-radius: 5px" id='image' type='text' name='img' placeholder="Link for image"/>
+                    <br>
+                    <br>
+                    <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+                    <a type="button" class="btn btn-primary" href="/halls">Back</a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</th:block>

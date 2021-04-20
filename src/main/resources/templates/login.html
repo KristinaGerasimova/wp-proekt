@@ -1,0 +1,42 @@
+<div class="text-center" xmlns:th="http://www.thymeleaf.org">
+    <img src="https://cdn.wallpaper.com/main/2017/08/bxr-boxinggym-hd-4.jpg"  style="width: 100%; height:100%; background-size: cover;position: relative">
+    <div class="container-fluid" >
+<!--        <img src="../bg.jpg"  style="width: 100%; height:100%; background-size: cover;position: relative">-->
+
+        <div style="position: absolute; width: 30%; top: 60%; left: 80%; transform: translate(-50%,-50%)">
+            <div class="container bg-light" style="border: 2px solid lightgray; border-radius: 80px; width: 100%; height: 100%;" >
+                <div class="row">
+                    <div class="col-10 offset-1">
+                        <form class="form-signin mt-xl-5" method="post" action="/login">
+                            <h2 class="form-signin-heading">Sign In</h2>
+                            <br>
+                            <p>
+                            <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-warning"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" name="username" class="form-control" placeholder="username" required="">
+                        </div>
+                            </p>
+                            <p>
+                            <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-warning "><i class="fas fa-key "></i></span>
+                            </div>
+                            <input type="password" name="password" class="form-control" placeholder="password" required="">
+                        </div>
+                            </p>
+                            <div th:text="${param.error}" class="text-danger"></div>
+                            <div class="form-group">
+                                <button id="submit" class="btn float-center login_btn bg-warning" type="submit">Log in</button>
+                            </div>
+                        </form>
+                        <a href="/register" class="btn float-center login_btn bg-info">Register</a>
+                        <br>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

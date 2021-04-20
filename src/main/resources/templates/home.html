@@ -1,0 +1,146 @@
+<div class="text-center" xmlns:th="http://www.thymeleaf.org">
+    <div class="container-fluid vh-100 mx-0 px-0" >
+<!--        <img src="pocetna.jpg" width="100%" height="100%" >-->
+        <img src="../bg.jpg"  style="width: 100%; height:100%; background-size: cover;position: relative">
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%)">
+            <div class="h1 font-italic text-white">Shape your body</div>
+            <br>
+            <div class="h1 text-uppercase text-white">Be Strong Training HARD</div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p style="margin-top: 70px;" sec:authorize="isAuthenticated()"><a class="h1 text-white text-uppercase"  href="/calendar" >Check out exercise terms !</a>  </p>
+
+        </div>
+
+    </div>
+
+    <div class="vh-100 bg-light px-0 mx-0" id="services">
+        <br>
+
+        <br>
+        <div class="container">
+            <div class="text-center">
+                <br>
+                <br>
+                <h2 class="text-warning text-uppercase"><a class="text-warning" href="/categories">Categories</a></h2>
+                <br>
+                <br>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4 d-flex justify-content-center flex-column align-items-center">
+                        <div class="border w-50 h-50 rounded-circle bg-warning d-flex justify-content-center align-items-center py-5">
+                            <i class="fas fa-heartbeat text-white" style="font-size: 50px"></i>
+                        </div>
+                    <h4 class="my-3">BODY BUILDING</h4>
+                    <p class="text-muted">Bodybuilding is the use of progressive resistance exercise to control and develop one's musculature (muscle building) by muscle hypertrophy for aesthetic purposes.
+                       </p>
+                </div>
+                <div class="col-md-4 d-flex justify-content-center flex-column align-items-center">
+                    <div class="border w-50 h-50 rounded-circle bg-warning d-flex justify-content-center align-items-center py-5">
+                        <i class="fas fa-fire-alt text-white" style="font-size: 50px"></i>
+                    </div>
+                    <h4 class="my-3">MUSCLE GAIN</h4>
+                    <p class="text-muted">Building muscle requires a positive energy balance,
+                        which means that you must take in more calories than you burn. </p>
+                </div>
+                <div class="col-md-4 d-flex justify-content-center flex-column align-items-center">
+                    <div class="border w-50 h-50 rounded-circle bg-warning d-flex justify-content-center align-items-center py-5">
+                        <i class="fas fa-dumbbell text-white" style="font-size: 50px"></i>
+                    </div>
+
+                    <h4 class="my-3">WEIGHT LOSS</h4>
+                    <p class="text-muted">Weight loss, in the context of medicine, health, or physical fitness,
+                        refers to a reduction of the total body mass, by a mean loss of fluid, body fat (adipose tissue),
+                        or lean mass.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="vh-100" id="portfolio">
+        <div class="container py-3">
+            <div class="text-center">
+                <h2 class="text-uppercase"><a class="text-warning " href="/products">PRODUCTS</a></h2>
+            </div>
+            <div class="row my-5 py-5">
+              <div class="col-lg-4 col-sm-6">
+                  <div class="card" style="width: 18rem;">
+                      <img class="card-img-top" src="../rb.jpg" alt="Card image cap">
+                      <div class="card-body">
+                          <h5 class="card-title">Resistance Bands</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="/products" class="btn btn-warning">See all products</a>
+                      </div>
+                  </div>
+              </div>
+                <div class="col-lg-4 col-sm-6">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="../teg.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Fitness Portable Dumbbell</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="/products" class="btn btn-warning">See all products</a>
+                    </div>
+                </div>
+                    </div>
+                <div class="col-sm-6 col-lg-4">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="../Weight-Plate-WPR002-1-gym-fitness-equipment-yanrefitness-2.jpg" alt="Card image cap">
+                    <div class="card-body" style="height: 202px!important;">
+                        <h5 class="card-title">Barbell Plate Rubber </h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="/products" class="btn btn-warning">See all products</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="vh-80 bg-light" id="team">
+        <div class="container">
+            <div class="text-center">
+                <br>
+                <br>
+                <h2 class="section-heading text-uppercase"><a class="text-warning" href="/trainers">Our Amazing Team</a></h2>
+            </div>
+            <br>
+            <div class="row py-3 mt-5">
+                <div class="col-lg-4">
+                    <div class="team-member">
+                        <img class="mx-auto rounded-circle" src="../instruktorka1.jpg" style="width:100px;height: 100px" />
+                        <h4>Kay Garland</h4>
+                        <p class="text-muted">Professional trainer</p>
+                        <a class="btn btn-info btn-social mx-2" href="www.twitter.com"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-info btn-social mx-2" href="www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-info btn-social mx-2" href="www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="team-member">
+                        <img class="mx-auto rounded-circle" src="../instruktorka3.jpg" style="width:100px;height: 100px"/>
+                        <h4>Larry Parker</h4>
+                        <p class="text-muted">CrossFit trainer</p>
+                        <a class="btn btn-info btn-social mx-2" href="www.twitter.com"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-info btn-social mx-2" href="www.faceboook.com"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-info btn-social mx-2" href="www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="team-member">
+                        <img class="mx-auto rounded-circle" src="../instruktorka2.jpg" style="width:100px;height:100px" />
+                        <h4>Diana Petersen</h4>
+                        <p class="text-muted">Total body workout trainer</p>
+                        <a class="btn btn-info btn-social mx-2" href="www.twitter.com"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-info btn-social mx-2" href="www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-info btn-social mx-2" href="www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
+</div>

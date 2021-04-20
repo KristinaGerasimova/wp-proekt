@@ -1,0 +1,61 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Categories</title>
+    <meta charset="utf-8"/>
+</head>
+<body>
+<br>
+<br>
+<br>
+<div class="py-3" style="display: flex; justify-content: center"><h2>Categories</h2></div>
+
+
+<th:block xmlns:th="http://www.thymeleaf.org">
+    <div class="container">
+            <div class="row">
+                <div class="col-3 col-offset-3 py-2" style="display: flex; justify-content: space-between;" th:each="category : ${categories}">
+                    <div class="card profile" style="width: 18rem;">
+                        <img class="card-img-top" th:src="${category.getImg()}" width="200" height="200">
+                        <div class="card-body">
+                            <h5 class="card-title" th:text="${category.getName()}"></h5>
+                            <p class="card-text">
+                            <b><i>Description:</i></b><p th:text="${category.getDescription()}"></p><br>
+                            </p>
+                            <th:block sec:authorize="hasRole('ROLE_ADMIN')">
+                                <form th:action="@{'/categories/delete/{id}' (id=${category.getId()})}"
+                                      th:method="DELETE">
+                                    <button type="submit"
+                                            class="btn btn-sm btn-danger delete-product">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </form>
+                            </th:block>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+    </div>
+</th:block>
+
+<div class="py-2 ml-5" style="display: flex; justify-content: flex-start; flex-direction: column;" >
+    <br>
+    <th:block sec:authorize="hasRole('ROLE_ADMIN')">
+        <h3>Add new category</h3>
+<form action="/categories/add" method="POST">
+    <input style="width: 12%; border: 2px solid lightgray; border-radius: 5px" id='name' type='text' name='name' placeholder="Name"/>
+    <br>
+    <br>
+    <input style="width: 12%; border: 2px solid lightgray; border-radius: 5px" id='image' type='text' name='img' placeholder="Link for image"/>
+    <br>
+    <br>
+    <input style="width: 12%; border: 2px solid lightgray; border-radius: 5px" id='desc' type='text' name='description' placeholder="Some description"/>
+    <br>
+    <br>
+    <input class="bg-warning" style="width: 12%; border: 2px solid lightgray; border-radius: 5px" type='submit' value='Submit'/>
+</form>
+        <th:block sec:authorize="hasRole('ROLE_ADMIN')">
+</div>
+</body>
+</html>
